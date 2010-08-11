@@ -1,0 +1,10 @@
+/*
+
+    Footnotes: 
+
+    #1: The original author had intended to pre-emptively support window.media interface.
+        I have fixed to reflect the actual API presented here http://www.w3.org/TR/cssom-view/#the-media-interface
+        ie: window.media.query => window.media.matchMedium && CSSParser.mediumApplies => CSSParser.matchMedium
+
+
+*/

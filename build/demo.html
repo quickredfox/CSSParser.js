@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>demo</title>
+	<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
+	
+	<link rel="stylesheet" href="demo.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="CSSparser.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css" media="screen">
+ 		*{ font-family:sans-serif; font-size:18px; }
+		a.lang{float:right;color:#c03;margin:1em;background:orange;padding:12px;}
+		.fr{ display:none;}
+		p{ padding:0 1em; text-align:center;}
+		#demo{ width:800px;border:3px solid #669;background:#ccf;color:#336;}
+	</style>
+	<script type="text/javascript" charset="utf-8">
+	$.get('demo.css',function(styles) {
+		console.debug(styles)
+		var enhancements = CSSParser.parse(styles,'css3');
+		CSSParser.addCSS(enhancements);
+	})
+	</script>
+</head>
+<body>
+	<a class="lang" href="#" onclick="$('.en,.fr').toggle()"><span class="en">Francais</span><span class="fr">English</span></a>
+	<div id="demo">
+		<p class="en">To understand this demo, you have to look at the source of the "<a href="demo.css">demo.css</a>" stylesheet.</p>
+		<p class="en">Notice how it has no browser specific extensions yet the CSS3 stuff works (mostly if you're not in IE).</p>
+		<p class="en">That's because I've used CSSParser to parse the main stylesheet and apply it's css3 processor on it.</p>
+		<p class="en">I then inject these enhancements into a new dynamically created stylesheet and voila!</p>
+		
+		<p class="fr">Pour comprendre ce demo, il faut regarder la source de la feuille de style "<a href="demo.css">demo.css</a>"</p>
+		<p class="fr">Observez-bien come il n'y a pas d'extensions "browser specific" et que le CSS3 fonctione pareil (sauf en partie IE).</p>
+		<p class="fr">Ceci est grâce à CSSParser. Je m'en sers pour parser la feuille de style et y applique ensuite le processeur css3.</p>
+		<p class="fr">Ensuite, j'injecte la nouvelle feuille de style créée dynamiquement dans le document et voila!<p>
+
+	</div>
+
+</body>
+</html>

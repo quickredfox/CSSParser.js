@@ -1,0 +1,11 @@
+#demo{
+    border-radius: 1em;/* no IE equiv */
+    border-top-left-radius:2em; /* no IE equiv */   
+    box-shadow: 0px 0px 4px #000;
+}
+#demo p{
+    text-shadow:1px 1px 2px #000000;
+}
+a.lang{
+    border-radius:1em;/* no IE equiv */
+}

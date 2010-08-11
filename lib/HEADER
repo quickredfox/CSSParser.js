@@ -1,0 +1,39 @@
+/*
+ 
+  CSSParser.js v0.1
+ 
+  A CSS parser written in javascript. 
+ 
+  Copyright 2010, Francois Lafortune, quickredfox
+  Licensed MIT
+ 
+  CSSParser is a re-write of the MIT Licensed jquery-css-parser 
+  found here http://bililite.com/blog/2009/01/16/jquery-css-parser
+  Which is copyrighted 2009 Daniel Wachsstock. MIT Licensed.
+ 
+  The idea was to separate the parser from jquery and my concerns
+  being different than the original author's intent, I simply 
+  decided it would be more convenient to just copy/paste and 
+  mix it up a little. Also, I was not satisfied /w the original API.
+  
+ 
+  Usage:
+ 
+   The code below is all you need to write your own processor:
+   
+   CSSParser.addProcessor('myprocessor',
+       function(css) {
+           var parsed = {};
+           for(var selector in css){
+               var properties = css[selector];
+               for(var property in properties){
+                   var value = properties[property];
+                   // do something with value for example
+                   if(/px/.test(value)) parsed[selector][property] = value.replace(/px/g,'em');
+               }
+           }
+           return parsed;
+       }
+   );
+ 
+*/
